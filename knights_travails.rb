@@ -1,6 +1,7 @@
 class ChessBoard
   def initialize
-
+    @queue = []
+    @found = false
   end
 end
 
