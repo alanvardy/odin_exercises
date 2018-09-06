@@ -6,7 +6,15 @@ class ChessBoard
 
   def knight_moves(origin, destination)
     @queue << Node.new(origin[0], origin[1])
-    return @queue.shift
+
+    loop do
+      current = @queue.shift
+      if [current.x, current.y] == destination
+        return "Match!"
+      else
+        return "No match! #{@queue.length}"
+      end
+    end
   end
 end
 
@@ -20,4 +28,4 @@ class Node
 end
 
 board = ChessBoard.new
-puts board.knight_moves([1, 2], [3, 4]).inspect
+puts board.knight_moves([1, 2], [2, 1]).inspect
