@@ -52,6 +52,7 @@ module Enumerable
     self.my_each do |x|
       counter += 1 if yield(x)
     end
+    counter
   end
 
   def my_map
